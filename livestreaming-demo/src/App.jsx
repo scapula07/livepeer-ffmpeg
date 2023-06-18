@@ -73,6 +73,17 @@ function App() {
                </div>     
       
             </div> 
+            <div className='w-full flex justify-center py-8'>
+            <div className='flex w-1/2 justify-center items-center space-x-10'>
+                 <input 
+                    className='w-full py-4 border py-1 px-5'
+                    placeholder='Stream Key'
+                  />
+
+                 <button className='bg-slate-500 rounded-lg px-8 py-2 text-slate-300'>Save</button>
+
+            </div>
+            </div>
 
            </div>
            <div className='w-full px-8'>
