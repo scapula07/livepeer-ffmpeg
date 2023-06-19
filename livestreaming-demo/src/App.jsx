@@ -86,7 +86,7 @@ function App() {
                         onChange={(e)=>setKey(e.target.value)}
                       />
 
-                    <button className='bg-slate-500 rounded-lg px-8 py-2 text-slate-300'>Save</button>
+                    <button className='bg-slate-400 rounded-lg px-8 py-2 text-slate-300'>Save</button>
 
                 </div>
                 <div className='flex w-1/2 justify-center items-center space-x-10'>
@@ -97,7 +97,7 @@ function App() {
                         onChange={(e)=>setPlaybackId(e.target.value)}
                       />
 
-                    <button className='bg-slate-500 rounded-lg px-8 py-2 text-slate-300'>Save</button>
+                    <button className='bg-slate-400 rounded-lg px-8 py-2 text-slate-300'>Save</button>
 
                 </div>
                </div>
