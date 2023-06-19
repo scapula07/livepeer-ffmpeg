@@ -26,6 +26,10 @@ import MonitorHealth from '@scapula/joysticklabs-livepeer-rtmp/src/monitorHealth
 function App() {
   // const { data: playbackInfo } = usePlaybackInfo("d40fauyr7kmgnx1u");
   // console.log(playbackInfo,"info")
+  const [streamKey,setKey]=useState()
+  const [playbackId,setPlaybackId]=useState()
+  const wssUrl=`wss://docker.freetyl.io/rtmp://rtmp.livepeer.com/live/${streamKey}`
+  console.log(wssUrl,"wss")
 
   return (
    
@@ -37,7 +41,7 @@ function App() {
            <div className='w-full flex space-x-10'>
               <div className='w-2/5'>
                 <CamLivepeer
-                    url={"ws://localhost:5001"} 
+                    url={wssUrl} 
                     streamKey={"1ea6-htsc-qb9x-wabv"} 
                     streamName={"Testing"}
                     />
@@ -46,7 +50,7 @@ function App() {
                 <div className='w-2/5 '>
                 <Player 
                     title={""}
-                    playbackId={"d40fauyr7kmgnx1u"}
+                    playbackId={playbackId}
                     autoPlay
                     theme={{
                       borderStyles: {
@@ -73,17 +77,30 @@ function App() {
                </div>     
       
             </div> 
-            <div className='w-full flex justify-center py-8'>
-            <div className='flex w-1/2 justify-center items-center space-x-10'>
-                 <input 
-                    className='w-full py-4 border py-1 px-5'
-                    placeholder='Stream Key'
-                  />
+            <div className='w-full flex flex-col items-center py-8 space-y-4'>
+                <div className='flex w-1/2 justify-center items-center space-x-10'>
+                    <input 
+                        className='w-full py-4 border py-1 px-5'
+                        placeholder='Stream Key'
+                        value={streamKey}
+                        onChange={(e)=>setKey(e.target.value)}
+                      />
 
-                 <button className='bg-slate-500 rounded-lg px-8 py-2 text-slate-300'>Save</button>
+                    <button className='bg-slate-500 rounded-lg px-8 py-2 text-slate-300'>Save</button>
 
-            </div>
-            </div>
+                </div>
+                <div className='flex w-1/2 justify-center items-center space-x-10'>
+                    <input 
+                        className='w-full py-4 border py-1 px-5'
+                        placeholder='playback id'
+                        value={playbackId}
+                        onChange={(e)=>setPlaybackId(e.target.value)}
+                      />
+
+                    <button className='bg-slate-500 rounded-lg px-8 py-2 text-slate-300'>Save</button>
+
+                </div>
+               </div>
 
            </div>
            <div className='w-full px-8'>
