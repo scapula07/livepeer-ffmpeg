@@ -10,11 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@joysticklabs/livepeer-webwss": "file:../demo/Desktop/scapula-livepeer-sdk",
     "@livepeer/react": "^2.5.0-next.2",
-    "@scapula/joysticklabs-livepeer-rtmp": "https://github.com/scapula07/scapula-livepeer-sdk.git",
     "install": "^0.13.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0",
+    "react-webcam": "^7.1.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",

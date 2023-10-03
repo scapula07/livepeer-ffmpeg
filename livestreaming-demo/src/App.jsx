@@ -2,10 +2,9 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import  CamLivepeer  from "@scapula/joysticklabs-livepeer-rtmp/src"
+import CamLivepeer from './cam'
 
 
-import { io } from "socket.io-client";
 import { usePlaybackInfo } from '@livepeer/react';
 import {
   LivepeerConfig,
@@ -13,7 +12,7 @@ import {
   studioProvider,
   Player
 } from '@livepeer/react';
-import MonitorHealth from '@scapula/joysticklabs-livepeer-rtmp/src/monitorHealth'
+
 
  const livepeerClient = createReactClient({
   provider: studioProvider({
@@ -28,7 +27,8 @@ function App() {
   // console.log(playbackInfo,"info")
   const [streamKey,setKey]=useState()
   const [playbackId,setPlaybackId]=useState()
-  const wssUrl=`wss://docker.freetyl.io/rtmp://rtmp.livepeer.com/live/${streamKey}`
+  // const wssUrl=`wss://docker.freetyl.io/rtmp://rtmp.livepeer.com/live/${streamKey}`
+  const wssUrl=`ws://127.0.0.1:8000/${streamKey}`
   console.log(wssUrl,"wss")
 
   return (
@@ -42,7 +42,7 @@ function App() {
               <div className='w-2/5'>
                 <CamLivepeer
                     url={wssUrl} 
-                    streamKey={"1ea6-htsc-qb9x-wabv"} 
+                    streamKey={"6a17-2b5w-jg07-cmfn"} 
                     streamName={"Testing"}
                     />
                 </div>
@@ -104,10 +104,10 @@ function App() {
 
            </div>
            <div className='w-full px-8'>
-                  <MonitorHealth 
+                  {/* <MonitorHealth 
                       streamId={"d40fcf0b-0051-487f-bf30-d2e4aef22d49"}
                       apiKey={"68ba74d0-ae73-43b4-9fce-0494773f7ddf"}
-                  />
+                  /> */}
 
 
                </div>
